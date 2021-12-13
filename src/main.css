@@ -1,0 +1,107 @@
+/*************************************
+                Default
+*************************************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+*
+{
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    font-family: 'Poppins';
+}
+
+/*************************************
+                NAVBAR
+*************************************/
+header
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+}
+
+.logo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img
+{
+    width: 70px;
+    height: 70px;
+} 
+.logo h1 
+{
+    font-size: 25px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.menuNavbar
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuNavbar ul 
+{
+    display: flex;
+    list-style: none;
+}
+.menuNavbar ul li
+{
+    padding: 20px;
+}
+.menuNavbar ul li a
+{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.userLog
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userLog .profile
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.userLog .profile li
+{
+    color: #fff;
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+}
+.userLog .signin
+{
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    font-size: 17px;
+    cursor: pointer;
+    border: none;
+    background-color: aqua;
+}
+.userLog .signup
+{
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    font-size: 17px;
+    cursor: pointer;
+    border: none;
+    background-color: red;
+}
