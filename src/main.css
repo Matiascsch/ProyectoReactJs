@@ -29,6 +29,7 @@ header
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
 }
 .logo img
 {
@@ -47,6 +48,7 @@ header
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 20px;
 }
 .menuNavbar ul 
 {
@@ -103,5 +105,6 @@ header
     font-size: 17px;
     cursor: pointer;
     border: none;
-    background-color: red;
+    background-color: rgb(250, 41, 41);
 }
+
