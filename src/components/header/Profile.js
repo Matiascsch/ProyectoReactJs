@@ -1,11 +1,12 @@
 import React from "react";
 import CartWidget from "./CartWidget";
+import UserWidget from "./UserWidget";
 
 const Profile = () => {
     return (
         <div className="userLog">
             <ul className='profile'>
-                <li className='user'><ion-icon name="person-outline"></ion-icon></li> 
+                <UserWidget /> 
 
                 <CartWidget />
             </ul>

@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 const ItemCount = ({ stock , initial , onAdd }) => {
-
+    
     const [contador, setContador] = useState(initial);
 
     const aumentarCant = () =>{
@@ -12,7 +12,7 @@ const ItemCount = ({ stock , initial , onAdd }) => {
     }
 
     const disminuirCant = () =>{
-        if (contador > 1) setContador(contador - 1);
+        if (contador > initial) setContador(contador - 1);
         console.log("Has Disminuido la cantidad");
     }
 

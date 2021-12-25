@@ -1,5 +1,5 @@
 import NavBar from './components/header/NavBar'
-import Saludo from './components/greeting/ItemListContainer';
+import Saludo from './components/products/ItemListContainer';
 
 const App = () => {
     return (
