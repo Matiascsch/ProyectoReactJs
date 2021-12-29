@@ -108,3 +108,18 @@ header
     background-color: rgb(250, 41, 41);
 }
 
+
+
+/*************************************
+                FOOTER
+*************************************/
+.copyright
+{
+    width: 100%;
+    background-color: black;
+}
+.rights
+{
+    color: white;
+    text-align: center;
+}

@@ -2,30 +2,25 @@ import React from "react";
 import { useEffect , useState } from "react";
 import Item from "./Item";
 
-const ItemList = () =>{
-
-    const productos = [
-        {
-            id: 1,
-            title: "campera Montagne",
-            price: 200,
-            imgURL: "x"
-        },
-        {
-            id: 2,
-            title: "campera North Face",
-            price: 250,
-            imgURL: "xx"
-        }
-    ]
-
+const ItemList = ({listaProductos}) =>{
+    
     // uses 
     const [load , setLoad] = useState(true);
+    const [productos, setProductos] = useState([]);
     
     useEffect(()=> {
-        setTimeout(()=>{
-            setLoad(false);        
-        }, 2000);
+        const promise = new Promise ((res,rej) => {
+            setTimeout(()=>{
+                res(listaProductos);
+            },2000)
+        })
+
+        promise
+            .then((listaProductos) => {
+                setLoad(false);
+                setProductos(listaProductos);
+            })
+            .catch(e => console.log("***ERROR PROMISE ItemList***" + e))
     });
 
     // Return
@@ -38,7 +33,7 @@ const ItemList = () =>{
             <>
                 {productos.map((i)=>{
                     return(
-                        <Item key={i.id} title={i.title} price={i.price} imgURL={i.imgURL}   />
+                        <Item key={i.id} producto={i}/>
                     );
                 })}
             </>

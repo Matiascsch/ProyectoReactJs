@@ -1,12 +1,15 @@
 import NavBar from './components/header/NavBar'
-import Saludo from './components/products/ItemListContainer';
+import ItemListContainer from './components/products/ItemListContainer';
+import Footer from './components/footer/Footer';
 
 const App = () => {
     return (
     <>
         <NavBar />
 
-        <Saludo name="Matias" greeting="Bienvenido!!"/>
+        <ItemListContainer name="Matias" greeting="Bienvenido!!"/>
+
+        <Footer />
     </>
 )}
 

@@ -1,6 +1,8 @@
 import React from "react";
 
-const Item = ({ id, title, price, imgURL }) =>{
+const Item = ({ producto }) =>{
+    const { id , title , price , imgURL } = producto;
+    
     return (
         <div className="item">
             <img src={imgURL} alt="Foto de Producto"/> 
