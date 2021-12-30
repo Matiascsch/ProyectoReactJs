@@ -31,9 +31,9 @@ const ItemList = ({listaProductos}) =>{
     }else{
         return (
             <>
-                {productos.map((i)=>{
+                {productos.map((item)=>{
                     return(
-                        <Item key={i.id} producto={i}/>
+                        <Item key={item.id} producto={item} />
                     );
                 })}
             </>

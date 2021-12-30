@@ -1,28 +1,14 @@
 import React from "react";
 import ItemList from "./ItemList";
 
-const ItemListContainer = (props) =>{
-    const productos = [
-        {
-            id: 1,
-            title: "campera Montagne",
-            price: 200,
-            imgURL: "x"
-        },
-        {
-            id: 2,
-            title: "campera North Face",
-            price: 250,
-            imgURL: "xx"
-        }
-    ];
+const ItemListContainer = ({name , greeting , listaProductos}) =>{
     
     return(
 
         <>
-        <h2>{props.greeting} {props.name} ¿Como Estas?</h2>
+        <h2>{greeting} {name} ¿Como Estas?</h2>
 
-        <ItemList  listaProductos={productos}/>
+        <ItemList  listaProductos={listaProductos}/>
         </>
     );
 }

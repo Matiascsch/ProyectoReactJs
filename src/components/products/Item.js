@@ -1,7 +1,7 @@
 import React from "react";
 
 const Item = ({ producto }) =>{
-    const { id , title , price , imgURL } = producto;
+    const { title , price , imgURL } = producto;
     
     return (
         <div className="item">
