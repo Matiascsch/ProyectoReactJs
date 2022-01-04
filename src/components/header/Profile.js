@@ -5,13 +5,12 @@ import UserWidget from "./UserWidget";
 const Profile = () => {
     return (
         <div className="userLog">
+            <button className='signin'>Sign In</button>
             <ul className='profile'>
                 <UserWidget /> 
 
                 <CartWidget />
             </ul>
-            <button className='signin'>Sign In</button>
-            <button className='signup'>Sign Up</button>
         </div>
     );
 }

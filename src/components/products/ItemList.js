@@ -1,44 +1,23 @@
 import React from "react";
-import { useEffect , useState } from "react";
+import { Link } from "react-router-dom";
 import Item from "./Item";
 
-const ItemList = ({listaProductos}) =>{
-    
-    // uses 
-    const [load , setLoad] = useState(true);
-    const [productos, setProductos] = useState([]);
-    
-    useEffect(()=> {
-        const promise = new Promise ((res,rej) => {
-            setTimeout(()=>{
-                res(listaProductos);
-            },2000)
-        })
-
-        promise
-            .then((listaProductos) => {
-                setLoad(false);
-                setProductos(listaProductos);
-            })
-            .catch(e => console.log("***ERROR PROMISE ItemList***" + e))
-    });
+const ItemList = ({listaProds}) =>{
 
     // Return
-    if (load){
         return (
-            <p>CARGANDO ARTICULOS</p>
-        );
-    }else{
-        return (
-            <>
-                {productos.map((item)=>{
+            <div className="itemContainer">
+                {
+                listaProds.map((item)=>{
                     return(
-                        <Item key={item.id} producto={item} />
+                        <Link to={"/tienda/detalles/"+ item.id}>
+                            <Item key={item.id} producto={item} />
+                        </Link>
                     );
-                })}
-            </>
+                })
+                }
+            </div>
         );
-    }
 }
 
 export default ItemList;

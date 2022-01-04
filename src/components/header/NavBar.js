@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Logo from './Logo';
 import Profile from './Profile';
 import Links from './Links';
@@ -8,7 +9,7 @@ const NavBar = () => {
     return (
         <header>
             <div className="logo">
-                <Logo />
+                    <Logo />
                 <Links />
             </div>
 

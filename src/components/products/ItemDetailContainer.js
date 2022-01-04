@@ -1,38 +1,31 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from './ItemDetail';
 
-const ItemDetailContainer = ({listaProductos}) => {
+const ItemDetailContainer = () => {
     const [load, setLoad] = useState(true);
-    const [getProduct, setGetProduct] = useState(listaProductos);
+    const [getProduct, setGetProduct] = useState({});
     
     useEffect(()=> {
-        const promesa = new Promise ((res,rej) => {
-            setTimeout(()=>{
-                res(getItem);
-            }, 2000)
-        })
-        
+        const promesa = fetch('https://fakestoreapi.com/products/1');
+
         promesa
-            .then(()=> {
-                getItem();
+            .then(res => res.json())
+            .then((data)=> {
+                setGetProduct(data);
                 setLoad(false);
             })
-            .catch(e => console.log("*** ERROR en Promesa 'ItemDetailContainer' ***" + e))
-    })
-
-    const getItem = (id) => {
-        const newItem = getProduct.filter( (item)=> item.id === id );
-
-        return setGetProduct([newItem])
-    }
+            .catch(e => console.log("*** ERROR en Promesa 'ItemDetailContainer' *** " + e));
+    });
 
     if (load){
         return <p>CARGANDO</p>
     }else{
         return (
-            <ItemDetail item={getItem}/>
-        )
-    }
+            <div className="detailContainer">
+                <ItemDetail item={getProduct} />
+            </div>
+        );
+    };
         
 }
 

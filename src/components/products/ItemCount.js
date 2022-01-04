@@ -1,7 +1,7 @@
 // CONTADOR DE PRODUCTOS
 import { useState } from "react";
 
-const ItemCount = ({ stock , initial , onAdd }) => {
+const ItemCount = ({ stock , initial }) => {
     
     const [contador, setContador] = useState(initial);
 
@@ -19,7 +19,6 @@ const ItemCount = ({ stock , initial , onAdd }) => {
     return(
         <div className="contador">
             <p>Cantidad: {contador}</p>
-            <p>Stock: {stock}</p>
 
             <button onClick={aumentarCant}>Mas</button>
             <button onClick={disminuirCant}>Menos</button>

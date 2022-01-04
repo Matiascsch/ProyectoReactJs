@@ -31,6 +31,14 @@ header
     align-items: center;
     margin-left: 10px;
 }
+.logo a
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    text-decoration: none;
+}
 .logo img
 {
     width: 70px;
@@ -71,6 +79,7 @@ header
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 5px;
 }
 .userLog .profile
 {
@@ -79,7 +88,7 @@ header
     align-items: center;
     list-style: none;
 }
-.userLog .profile li
+.userLog .profile li a
 {
     color: #fff;
     font-size: 25px;
@@ -96,16 +105,58 @@ header
     border: none;
     background-color: aqua;
 }
-.userLog .signup
+
+/*************************************
+            Vista de Productos
+*************************************/
+.itemContainer a 
 {
-    color: #fff;
-    width: 100px;
-    height: 30px;
+    color: black; 
+    text-decoration: none;
+}
+.itemContainer
+{
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.item
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 5px;
-    font-size: 17px;
-    cursor: pointer;
-    border: none;
-    background-color: rgb(250, 41, 41);
+    width: 300px;
+    border: 1px solid#555;
+}
+.item img
+{
+    width: 300px;
+    height: 300px;
+}
+.item .infoItem
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(255, 66, 101);
+} 
+.item .infoItem h2 
+{
+    font-size: 18px;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+.item .infoItem p
+{
+    font-size: 25px;
+    color: #fff;
 }
 
 
@@ -113,6 +164,106 @@ header
 /*************************************
                 FOOTER
 *************************************/
+.footer 
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #555;
+}
+
+footer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.socialFooter
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.socialFooter h4 
+{
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: underline 1px solid #fff;
+    margin-bottom: 10px;
+}
+.socialFooter ul 
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    padding: 10px;
+    align-items: center;
+}
+.socialFooter ul li
+{
+    text-decoration: none;
+    padding: 0 10px;
+    color: #fff; 
+    font-size: 30px;
+}
+.socialFooter ul li:hover
+{
+    color: #00ffff;
+    font-size: 40px;
+}
+
+.contactFooter
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contactFooter h4 
+{
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: underline 1px solid #fff;
+    margin-bottom: 10px;
+}
+
+.contactFooter .inputContactFooter
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.contactFooter .inputContactFooter input
+{
+    width: 300px;
+    height: 50px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    padding-left: 5px;
+    font-size: 21px;
+}
+.contactFooter .inputContactFooter button
+{
+    border: none;
+    width: 100px;
+    font-weight: 400;
+    height: 50px;
+    background-color: #00ffff;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 5px;
+}
+
 .copyright
 {
     width: 100%;
