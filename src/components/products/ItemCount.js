@@ -7,12 +7,12 @@ const ItemCount = ({ stock , initial }) => {
 
     const aumentarCant = () =>{
 
-        if (contador < stock) setContador(contador + 1);
+        if (contador < stock) setContador(contador + initial);
         console.log("Has Aumentado la cantidad");
     }
 
     const disminuirCant = () =>{
-        if (contador > initial) setContador(contador - 1);
+        if (contador > initial) setContador(contador - initial);
         console.log("Has Disminuido la cantidad");
     }
 
