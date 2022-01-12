@@ -1,19 +1,20 @@
 // CONTADOR DE PRODUCTOS
 import { useState } from "react";
 
-const ItemCount = ({ stock , initial }) => {
+const ItemCount = ({ stock , initial ,traerNum }) => {
     
     const [contador, setContador] = useState(initial);
 
     const aumentarCant = () =>{
-
         if (contador < stock) setContador(contador + initial);
-        console.log("Has Aumentado la cantidad");
+            console.log("Has Aumentado la cantidad a " + contador);
+            traerNum(contador)
     }
 
     const disminuirCant = () =>{
         if (contador > initial) setContador(contador - initial);
-        console.log("Has Disminuido la cantidad");
+            console.log("Has Disminuido la cantidad a " + contador);
+            traerNum(contador)
     }
 
     return(

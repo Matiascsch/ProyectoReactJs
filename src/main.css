@@ -152,6 +152,10 @@ header
     text-align: center;
     text-transform: capitalize;
     font-weight: 400;
+    width: 90%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .item .infoItem p
 {
@@ -209,12 +213,11 @@ footer
     text-decoration: none;
     padding: 0 10px;
     color: #fff; 
-    font-size: 30px;
+    font-size: 40px;
 }
 .socialFooter ul li:hover
 {
     color: #00ffff;
-    font-size: 40px;
 }
 
 .contactFooter
