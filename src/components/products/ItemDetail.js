@@ -11,15 +11,15 @@ const ItemDetail = ({item}) => {
     const stock = 18;
     const finalPrice = price ;
     
+    // Estados
     const [cant, setCant] = useState(initial)
 
-    const traerCant = (i) => {
-        console.log(i)
-        setCant(i)
+    const traerCant = (num) => {
+        setCant(num)
     }
 
     const addToCart = () => {
-        console.log(`has guardado ${cant} de productos '${title}' en el carrito`)
+        console.log(`has guardado ${cant} '${title}' en el carrito`)
     }
 
     return (
