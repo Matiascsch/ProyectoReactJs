@@ -1,4 +1,5 @@
 import React from "react";
+import Loading from "./Loading";
 import ItemList from "./ItemList";
 import { useState , useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -31,7 +32,7 @@ const ItemListContainer = () =>{
 
     if (load){
         return (
-            <p>CARGANDO ARTICULOS</p>
+            <Loading />
         );
     }else{
         return(
