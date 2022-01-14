@@ -22,9 +22,11 @@ const ItemCount = ({ stock , initial ,traerNum }) => {
     return(
         <div className="contador">
             <p>Cantidad: {contador}</p>
-
-            <button onClick={aumentarCant}>Mas</button>
-            <button onClick={disminuirCant}>Menos</button>
+            
+            <div className="btnAumDis">
+                <button onClick={aumentarCant}>+</button>
+                <button onClick={disminuirCant}>-</button>
+            </div>
         </div>
     );
 }

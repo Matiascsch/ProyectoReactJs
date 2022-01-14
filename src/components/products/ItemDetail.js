@@ -25,12 +25,24 @@ const ItemDetail = ({item}) => {
 
     return (
         <div className="vistaProd">
-            <h2>{title} </h2><span>Stock: {stock}</span>
             <img src={image} alt="foto Del Producto detalles"/>
-            <ItemCount initial={initial} stock={stock} traerNum={traerCant}/>
-            <p>${finalPrice}</p>
-            <p>Sobre este Producto : <br/>{description}</p>
-            <button onClick={addToCart}>Agregar al Carrito</button>
+
+            <div className="detailInfo">
+                <div className="detailItem">
+                    <h2>{title}</h2> 
+                    <span>Stock: {stock}</span>
+                    <ItemCount initial={initial} stock={stock} traerNum={traerCant}/>
+                </div>
+                
+                <p className="detailPrice">${finalPrice}</p>
+                
+                <div className="detailDescrip">
+                    <h5>Sobre este Producto :</h5>
+                    <p>{description}</p>
+                </div>
+
+                <button className="btnAddToCart" onClick={()=> addToCart(item, cant)}>Agregar al Carrito</button>
+            </div>
         </div>
     );
 }

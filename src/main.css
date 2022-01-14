@@ -230,6 +230,99 @@ header
     color: #000;
 }
 
+/*************************************
+            Detalle de Productos
+*************************************/
+.vistaProd
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px 100px;
+}
+.vistaProd img 
+{
+    height: 500px;
+    width: 600px;
+    object-fit: contain;
+}
+
+.detailInfo
+{
+    display: flex;
+    height: 500px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 40px;
+}
+.detailInfo .detailItem h2
+{
+    font-size: 35px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+.detailInfo .detailItem span 
+{
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.detailInfo .detailPrice
+{
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.detailInfo .detailDescrip h5
+{
+    font-size: 22px;
+    text-decoration: underline;
+    font-weight: 400;
+}
+.detailInfo .detailDescrip p
+{
+    font-size: 17px;
+}
+
+.vistaProd .btnAddToCart
+{
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 60px;
+    font-size: 18px;
+    text-transform: capitalize;
+    background-color: rgb(247, 34, 73);
+    color: #fff;
+}
+
+/* Contador */
+.contador 
+{
+    display: flex;
+    width: 180px;
+    justify-content: space-between;
+    align-items: center;
+}
+.contador p
+{
+    font-size: 17px;
+    font-weight: 400;
+}
+.contador .btnAumDis button
+{
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    margin: 3px;
+    font-size: 20px;
+    border: none;
+    background-color: rgb(247, 34, 73);
+    color: #fff;
+}
 
 
 /*************************************
