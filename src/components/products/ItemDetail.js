@@ -25,7 +25,7 @@ const ItemDetail = ({item}) => {
 
     return (
         <div className="vistaProd">
-            <img src={image} alt="foto Del Producto detalles"/>
+            <img src={image} alt={`Imagen de ${title}`}/>
 
             <div className="detailInfo">
                 <div className="detailItem">
