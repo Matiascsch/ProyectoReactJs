@@ -7,21 +7,31 @@ const { Provider } = CartContext;
 
 
 const ProviderCart = ({children}) => {
+    const [exist, setExist] = useState(true);
     const [carritoProds, setCarritoProds] = useState([]);
     const [carritoPrecio, setCarritoPrecio] = useState(0);
     const [carritoTotal, setCarritoTotal] = useState(0);
 
     // Agregar al Carrito
     const addToCart = (item, cantidad) => {
-            const newProd = {item : item, cantidad : cantidad}
+        const newProduct = {
+            articulo : item,
+            cantidad : cantidad
+        }
+
+        isInCart(newProduct);
+        if(exist === true){
             toast.error(`El Producto ${item.title} ya esta en el Carrito!`);
+        }else{
             toast.success(`${cantidad} ${item.title} Agregado/s al Carrito!`);
-            setCarritoProds([...carritoProds, newProd])
+            return setCarritoProds([...carritoProds, newProduct])
+        }
     }
 
+    console.log(carritoProds)
+
     const isInCart = (item) => {
-        const exist = carritoProds.includes(item);
-        console.log(exist)
+        return setExist(carritoProds.find(i => i.articulo.id === item.articulo.id) ? true : false);
     }
 
     const removeToCart = (item) => {

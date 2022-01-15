@@ -6,15 +6,17 @@ const ItemCount = ({ stock , initial ,traerNum }) => {
     const [contador, setContador] = useState(initial);
 
     const aumentarCant = () =>{
-        if (contador < stock) 
+        if (contador < stock) {
             setContador(contador + initial);
             console.log("Has Aumentado la cantidad");
+        }
     }
 
     const disminuirCant = () =>{
-        if (contador > initial)
+        if (contador > initial){
             setContador(contador - initial);
             console.log("Has Disminuido la cantidad");
+        }
     }
 
     traerNum(contador)
