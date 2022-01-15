@@ -1,7 +1,7 @@
 // CONTADOR DE PRODUCTOS
 import { useState } from "react";
 
-const ItemCount = ({ stock , initial ,traerNum }) => {
+const ItemCount = ({ stock , initial ,OnAdd }) => {
     
     const [contador, setContador] = useState(initial);
 
@@ -19,7 +19,7 @@ const ItemCount = ({ stock , initial ,traerNum }) => {
         }
     }
 
-    traerNum(contador)
+    OnAdd(contador)
 
     return(
         <div className="contador">

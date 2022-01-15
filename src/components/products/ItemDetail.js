@@ -19,7 +19,7 @@ const ItemDetail = ({item}) => {
     
 
     // Traer Numero de itemCount 
-    const traerCant = (num) => {
+    const OnAdd = (num) => {
         setCant(num)
     }
 
@@ -31,7 +31,7 @@ const ItemDetail = ({item}) => {
                 <div className="detailItem">
                     <h2>{title}</h2> 
                     <span>Stock: {stock}</span>
-                    <ItemCount initial={initial} stock={stock} traerNum={traerCant}/>
+                    <ItemCount initial={initial} stock={stock} OnAdd={OnAdd}/>
                 </div>
                 
                 <p className="detailPrice">${finalPrice}</p>
