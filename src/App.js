@@ -13,7 +13,7 @@ const App = () => {
 
             <BrowserRouter>
                 <NavBar />
-                    <ToastContainer autoClose={3000}/>
+                    <ToastContainer autoClose={2000}/>
                     <Main />
                 <Footer />
             </BrowserRouter>

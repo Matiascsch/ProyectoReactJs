@@ -1,9 +1,13 @@
 // CONTADOR DE PRODUCTOS
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ItemCount = ({ stock , initial ,OnAdd }) => {
     
     const [contador, setContador] = useState(initial);
+
+    useEffect(()=> {
+        OnAdd(contador)                    
+    })
 
     const aumentarCant = () =>{
         if (contador < stock) {
@@ -18,8 +22,6 @@ const ItemCount = ({ stock , initial ,OnAdd }) => {
             console.log("Has Disminuido la cantidad");
         }
     }
-
-    OnAdd(contador)
 
     return(
         <div className="contador">

@@ -15,12 +15,12 @@ const ItemDetail = ({item}) => {
     const finalPrice = (price / initial) * cant; // Calcular precio por cantidad de productos.
     
     // Contextos
-    const { addToCart , clearCart } = useContext(CartContext);
+    const { addToCart } = useContext(CartContext);
     
 
     // Traer Numero de itemCount 
-    const OnAdd = (num) => {
-        setCant(num)
+    const OnAdd = (contador) => {
+        setCant(contador)
     }
 
     return (
@@ -38,7 +38,7 @@ const ItemDetail = ({item}) => {
                 
                 <div className="detailDescrip">
                     <h5>Sobre este Producto :</h5>
-                    <p onClick={clearCart}>{description}</p>
+                    <p>{description}</p>
                 </div>
 
                 <button className="btnAddToCart" onClick={()=> addToCart(item, cant)}>Agregar al Carrito</button>

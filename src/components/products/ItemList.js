@@ -10,8 +10,8 @@ const ItemList = ({listaProds}) =>{
                 {
                 listaProds.map((item)=>{
                     return(
-                        <Link to={"/tienda/detalles/"+ item.id}>
-                            <Item key={item.id} producto={item} />
+                        <Link key={item.id} to={"/tienda/detalles/"+ item.id}>
+                            <Item producto={item} />
                         </Link>
                     );
                 })
