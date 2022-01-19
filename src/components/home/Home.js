@@ -1,10 +1,13 @@
 import React from "react";
+import ParallaxHome from "./content/ParallaxHome";
+import ContentHome from "./content/ContentHome";
 
 const Home = () =>  {
 
     return (
         <div id="homeContainer">
-            <h1>Pagina HOME</h1>
+            <ParallaxHome />
+            <ContentHome />
         </div>
     )
 

@@ -6,6 +6,8 @@ import Links from './Links';
 import '../../main.css';
 
 const NavBar = () => {
+    // const [burger, setBurger] = useState(true);
+
     return (
         <header>
             <div className="logo">

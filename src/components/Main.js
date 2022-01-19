@@ -4,7 +4,7 @@ import UserLogin from "./login/UserLogin";
 import Cart from "./login/Cart";
 import Home from "./home/Home";
 import Tienda from "./tienda/Tienda";
-import ItemDetailContainer from './products/ItemDetailContainer';
+import ItemDetailContainer from './tienda/products/ItemDetailContainer';
 import Contacto from "./contact/Contact";
 
 const Main = () => {

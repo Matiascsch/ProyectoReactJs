@@ -88,6 +88,9 @@ header
     justify-content: space-between;
     align-items: center;
     background-color: #222;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .logo
@@ -173,6 +176,170 @@ header
 }
 
 /*************************************
+                HOME
+*************************************/
+#background, #bosque, #backpacker {z-index: 997;}
+
+.ParallaxHome
+{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    z-index: 998;
+}
+.ParallaxHome::before
+{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	background: linear-gradient(to top, #222, transparent);
+	z-index: 998;
+}
+.ParallaxHome img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	pointer-events: none;
+}
+#textoParallax
+{
+	position: relative;
+	color: #000;
+	font-size: 10vh;
+	z-index: 998;
+	-webkit-text-stroke: 1px #fff;
+	text-transform: uppercase;
+}
+/* CATEGORIAS */
+.homeMain 
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 60vh;
+}
+.homeMain h2
+{
+	font-size: 3.5em;
+	margin-bottom: 10px;
+    font-weight: 400;
+    text-decoration: underline 3px solid rgb(247, 34, 73);
+	text-align: center;
+}
+
+.categoryContainer
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+.categoryContainer .category
+{
+    position: relative;
+    width: 275px;
+    height: 275px;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.categoryContainer .category:hover
+{
+    z-index: 1;
+    transform: scale(1.25);
+    box-shadow: 0 25px 40px rgba(0,0,0, .5);
+}
+.categoryContainer .category .categoryImg
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.categoryContainer .category .categoryImg:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(180deg, rgb(247, 34, 73), #000);
+    mix-blend-mode: multiply;
+    opacity: 0;
+    transition: 0.5s;
+}
+.categoryContainer .category:hover .categoryImg:before
+{
+    opacity: 1;
+}
+.categoryContainer .category .categoryImg img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.categoryContainer .category .categoryCont
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px;
+}
+.categoryContainer .category .categoryCont h3
+{
+    color: #fff;
+    transition: 0.5s;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 20px;
+    transform: translateY(200px);
+}
+.categoryContainer .category:hover .categoryCont h3
+{
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+.categoryContainer .category .categoryCont p
+{
+    color: #fff;
+    transform: translateY(200px);
+    transition: 0.3s;
+    font-size: 14px;
+}
+.categoryContainer .category:hover .categoryCont p
+{
+    transform: translateY(0);
+    transition-delay: 0.7s;
+}
+
+/*************************************
             Vista de Productos
 *************************************/
 .itemContainer a 
@@ -200,8 +367,8 @@ header
 }
 .item img
 {
-    width: 100%;
-    height: 300px;
+    max-width: 100%;
+    height: 270px;
     object-fit: contain;
 }
 .item .infoItem
@@ -345,7 +512,7 @@ header
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #555;
+    background-color: #000;
 }
 
 footer
@@ -386,6 +553,7 @@ footer
     padding: 0 10px;
     color: #fff; 
     font-size: 40px;
+    cursor: pointer;
 }
 .socialFooter ul li:hover
 {
@@ -443,10 +611,22 @@ footer
 .copyright
 {
     width: 100%;
-    background-color: black;
+    background-color: #111;
 }
 .rights
 {
     color: white;
     text-align: center;
+}
+
+
+/*************************************
+            MEDIAS QUERY'S
+*************************************/
+@media (max-width: 1000px){
+    header .menuNavbar ul li {padding: 10px;}
+}
+@media (max-width: 900px){
+    .ParallaxHome {display: none;}
+    
 }
