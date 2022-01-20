@@ -6,17 +6,20 @@ const Cart = () => {
     
     useEffect(()=> {
         carritoTotalProds();
-    })
+    }, [carritoTotalProds])
 
     return (
         <div className="cartContainer">
             <h2>Tu Carrito</h2>
             <div>
                 {carritoProds.map((i)=> {
+                    const {id, producto, cantidad} = i;
+                    const {title} = producto;
                     return (
-                    <div key={i.item.id}>
-                    <h2>Aqui se iteran los prods. {i.item.title}</h2>
-                    <button onClick={()=> removeToCart(i)}>Boton de Eliminar.</button>
+                    <div key={id}>
+                        <h2>{title}</h2>
+                        <p>Cantidad: {cantidad}</p>
+                        <button onClick={()=> removeToCart(i)}>Boton de Eliminar.</button>
                     </div>    
                     )
                 })}

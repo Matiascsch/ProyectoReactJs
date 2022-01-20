@@ -3,7 +3,7 @@ import ItemCount from "./ItemCount";
 import { useState } from "react";
 import { CartContext } from "../../contexts/CartContexts";
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({item, idProd}) => {
     const {title, description, price, image, initial, stock} = item;
 
     const [cant, setCant] = useState(initial) // contador
@@ -12,7 +12,11 @@ const ItemDetail = ({item}) => {
     
     // Contextos
     const { addToCart } = useContext(CartContext);
-    
+    const articulo = {
+        producto : item,
+        id : idProd,
+        cantidad : cant
+    }
 
     // Traer Numero de itemCount 
     const OnAdd = (contador) => {
@@ -37,7 +41,7 @@ const ItemDetail = ({item}) => {
                     <p>{description}</p>
                 </div>
 
-                <button className="btnAddToCart" onClick={()=> addToCart(item, cant)}>Agregar al Carrito</button>
+                <button className="btnAddToCart" onClick={()=> addToCart(articulo)}>Agregar al Carrito</button>
             </div>
         </div>
     );

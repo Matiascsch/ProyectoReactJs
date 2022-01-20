@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Loading from "./Loading";
 import ItemDetail from './ItemDetail';
 import {db} from "../../../firebase";
-import {collection, getDocs} from "firebase/firestore"
+import {collection, getDoc, doc} from "firebase/firestore"
 
 const ItemDetailContainer = () => {
     const [load, setLoad] = useState(true);
@@ -11,9 +11,17 @@ const ItemDetailContainer = () => {
     const {id} = useParams();
  
     useEffect(()=> {
-        setTimeout(()=> {
-            setLoad(false);
-        },2000)
+        const coleccion = collection(db, "productos");
+        const documento = doc(coleccion, id);
+        const pedido = getDoc(documento);
+            pedido
+                .then(res=>{
+                    const producto = res.data();
+                    
+                    setGetProduct(producto)
+                    setLoad(false);
+                })
+                .catch(e=> console.log(e));
     },[id]);
 
 
@@ -22,7 +30,7 @@ const ItemDetailContainer = () => {
     }else{
         return (
             <div className="detailContainer">
-                <ItemDetail item={getProduct} />
+                <ItemDetail item={getProduct} idProd={id}/>
             </div>
         );
     };

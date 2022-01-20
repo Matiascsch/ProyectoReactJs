@@ -12,16 +12,17 @@ const ProviderCart = ({children}) => {
     const [carritoPrecio, setCarritoPrecio] = useState(0);
 
     // Agregar al Carrito
-    const addToCart = (item, cantidad) => { // func Agregar un Producto
-
-        const exist = carritoProds.findIndex((i)=> i.item.id === item.id)
+    const addToCart = (articulo) => { // func Agregar un Producto
+        const {id , producto, cantidad} = articulo;
+        const {title} = producto;
+        const exist = carritoProds.findIndex((i)=> i.id === id)
        
         if(exist > -1){
-            toast.error(`El Producto ${item.title} ya esta en el Carrito!`);
+            toast.error(`El Producto ${title} ya esta en el Carrito!`);
             console.log(carritoProds)
         }else{
-            toast.success(`${cantidad} ${item.title} Agregado/s al Carrito!`);
-            setCarritoProds([...carritoProds, {item, cantidad}])
+            toast.success(`${cantidad} ${title} Agregado/s al Carrito!`);
+            setCarritoProds([...carritoProds, articulo])
             console.log(carritoProds)
         }
         carritoTotalProds();
@@ -32,8 +33,8 @@ const ProviderCart = ({children}) => {
     }
 
     const removeToCart = (item) => { // func Eliminar un Producto del Carrito
-        setCarritoProds(carritoProds.filter(prod => prod.item.id !== item.item.id));
-        console.log(`Has eliminado ${item.item.title}`)
+        setCarritoProds(carritoProds.filter(prod => prod.id !== item.id));
+        console.log(`Has eliminado ${item.title}`)
     }
 
     const clearCart = () => { // func Vaciar el Carrito

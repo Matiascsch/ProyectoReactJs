@@ -229,6 +229,7 @@ header
     flex-direction: column;
     align-items: center;
     min-height: 60vh;
+    background-color: #fff;
 }
 .homeMain h2
 {

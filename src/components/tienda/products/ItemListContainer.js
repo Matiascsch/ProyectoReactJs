@@ -14,11 +14,11 @@ const ItemListContainer = () =>{
     const {id} = useParams();
     
     useEffect( ()=> {
-        
+        const coleccion = collection(db,"productos");
         const coleccionProds =
-                (id === "hombres") ? query(collection(db,"productos"), where("gender", "==", id))
-                : (id === "mujeres") ? query(collection(db,"productos"), where("gender", "==", id))
-                : collection(db, "productos") ;
+                  (id === "hombres") ? query(coleccion, where("gender", "==", id))
+                : (id === "mujeres") ? query(coleccion, where("gender", "==", id))
+                : coleccion ;
         
         const pedido = getDocs(coleccionProds)
             pedido
