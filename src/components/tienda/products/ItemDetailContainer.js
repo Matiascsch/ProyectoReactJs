@@ -24,17 +24,9 @@ const ItemDetailContainer = () => {
                 .catch(e=> console.log(e));
     },[id]);
 
-
-    if (load){
-        return <Loading />
-    }else{
-        return (
-            <div className="detailContainer">
-                <ItemDetail item={getProduct} idProd={id}/>
-            </div>
-        );
-    };
-        
+    return (load) ? <Loading /> :<div className="detailContainer">
+                                    <ItemDetail item={getProduct} idProd={id}/>
+                                  </div>
 }
 
 export default ItemDetailContainer;

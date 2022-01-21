@@ -8,10 +8,11 @@ const ItemDetail = ({item, idProd}) => {
 
     const [cant, setCant] = useState(initial) // contador
 
-    const finalPrice = (price / initial) * cant; // Calcular precio por cantidad de productos.
+    const finalPrice = ((price / initial) * cant).toFixed(2); // Calcular precio por cantidad de productos.
     
     // Contextos
     const { addToCart } = useContext(CartContext);
+    
     const articulo = {
         producto : item,
         id : idProd,

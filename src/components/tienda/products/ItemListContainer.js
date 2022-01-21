@@ -43,17 +43,9 @@ const ItemListContainer = () =>{
 
     },[id]);
 
-    if (load){
-        return (
-            <Loading />
-        );
-    }else{
-        return(
-            <div className="catalogoContainer">
-                <ItemList listaProds={productos}/>
-            </div>
-        );
-    }
+    return (load) ? <Loading/> : <div className="catalogoContainer">
+                                    <ItemList listaProds={productos}/>
+                                  </div>
 }
 
 export default ItemListContainer;
