@@ -1,6 +1,7 @@
-import { addDoc } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { createContext, useState } from "react";
 import { toast } from "react-toastify";
+import {db} from "../../firebase";
 
 export const CartContext = createContext();
 
@@ -10,13 +11,14 @@ const ProviderCart = ({children}) => {
     const [carritoProds, setCarritoProds] = useState([]);
     const [carritoTotal, setCarritoTotal] = useState(0);
     const [carritoPrecio, setCarritoPrecio] = useState(0);
+    const [producto, setProducto] = useState();
 
     // Agregar al Carrito
     const addToCart = (articulo) => { // func Agregar un Producto
         const {id , producto, cantidad} = articulo;
         const {title} = producto;
         const exist = carritoProds.findIndex((i)=> i.id === id)
-       
+        setProducto(articulo);
         if(exist > -1){
             toast.error(`El Producto ${title} ya esta en el Carrito!`);
             console.log(carritoProds)
@@ -46,27 +48,39 @@ const ProviderCart = ({children}) => {
         }
     }
 
-    const updatePriceTotal = () => {
+    const updatePriceTotal = () => { // Actualizar Precio total Del Carrito
         setCarritoPrecio(carritoProds.reduce((acum, i) => acum + ((i.producto.price/i.producto.initial) * i.cantidad), 0))
     }
 
-    const confirmBuy = (user, producto) => { // Confirmar Pedido, mandar a Firebase
-        const usuario = {
-            nombre : user.name,
-            email : user.eamil,
-            telefono : user.tel
-        }
-        const operacion = {
-            buyer : usuario, 
-            producto : producto,
-            cantidad : producto.cantidad
-        };
-
-        addDoc("ventas", operacion);
+    const confirmBuy = (i) => { // Confirmar Pedido, mandar a Firebase
+        const coleccion = collection(db, "ventas")
+        if(carritoProds.length !== 0){
+            const usuario = {
+                nombre : "Matias Carballo Schatz",
+                email : "matias@gmail.com",
+                telefono : 1150505050
+            }
+            const operacion = {
+                buyer : usuario, 
+                articulo : i,
+                cantidad : i.cantidad,
+                fechaOperacion : serverTimestamp()
+            };
+            const orden = addDoc(coleccion, operacion);
+                  orden
+                    .then(res=>{
+                        console.log(producto)
+                        console.log(res.id)
+                        setCarritoProds([]);
+                        toast.success(`Compra Confirmada!`)})
+                    .catch(e=>{
+                        console.log(e)
+                    })
+        }else{toast.error("No Hay Productos en el Carrito para Comprar!")}
     }
     
     // Lo que Quiero Exportar en CartContext
-    const cartValues = {carritoProds, carritoTotal, carritoPrecio,  carritoTotalProds, addToCart, removeToCart, clearCart, updatePriceTotal};
+    const cartValues = {producto, carritoProds, carritoTotal, carritoPrecio,  carritoTotalProds, addToCart, removeToCart, clearCart, updatePriceTotal, confirmBuy};
 
     return (
         <Provider value={cartValues}>

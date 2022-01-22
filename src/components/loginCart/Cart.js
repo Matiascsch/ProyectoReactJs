@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import { CartContext } from "../contexts/CartContexts";
 
 const Cart = () => {
-    const {carritoProds, carritoPrecio, carritoTotal, carritoTotalProds, removeToCart, clearCart, updatePriceTotal} = useContext(CartContext);
+    const {producto ,carritoProds, carritoPrecio, carritoTotal, carritoTotalProds, removeToCart, clearCart, updatePriceTotal, confirmBuy} = useContext(CartContext);
 
     useEffect(()=> {
         carritoTotalProds();
@@ -42,7 +42,7 @@ const Cart = () => {
 
                 <div className="btnsConfirmar">
                     <button className="btnVaciarCart" onClick={clearCart}>Vaciar Carrito</button>
-                    <button className="btnComprarCart" onClick={clearCart}>Comprar Carrito</button>
+                    <button className="btnComprarCart" onClick={() => confirmBuy(producto)}>Comprar Carrito</button>
                 </div>
             </div>
         </section>
