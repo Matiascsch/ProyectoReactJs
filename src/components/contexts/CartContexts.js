@@ -14,7 +14,7 @@ const ProviderCart = ({children}) => {
     // Agregar al Carrito
     const addToCart = (articulo) => { // func Agregar un Producto
         const {id , producto, cantidad} = articulo;
-        const {title, price, initial} = producto;
+        const {title} = producto;
         const exist = carritoProds.findIndex((i)=> i.id === id)
        
         if(exist > -1){
@@ -23,7 +23,6 @@ const ProviderCart = ({children}) => {
         }else{
             toast.success(`${cantidad} ${title} Agregado/s al Carrito!`);
             setCarritoProds([...carritoProds, articulo])
-            console.log(carritoProds)
         }
         carritoTotalProds();
     }   
@@ -34,13 +33,17 @@ const ProviderCart = ({children}) => {
 
     const removeToCart = (item) => { // func Eliminar un Producto del Carrito
         setCarritoProds(carritoProds.filter(prod => prod.id !== item.id));
-        console.log(`Has eliminado ${item.producto.title}`)
+        toast.error(`Has eliminado ${item.producto.title}`);
     }
 
     const clearCart = () => { // func Vaciar el Carrito
-        setCarritoProds([]);
-        setCarritoTotal(0);
-        console.log('Has Limpiado el Carrito')
+        if(carritoProds.length !== 0){
+            setCarritoProds([]);
+            setCarritoTotal(0);
+            toast.success("Has Vaciado El Carrito")
+        }else{
+            toast.error("El Carrito ya esta Vacio!")
+        }
     }
 
     const updatePriceTotal = () => {
@@ -53,12 +56,13 @@ const ProviderCart = ({children}) => {
             email : user.eamil,
             telefono : user.tel
         }
-        const compra = {
+        const operacion = {
             buyer : usuario, 
             producto : producto,
             cantidad : producto.cantidad
         };
-        addDoc("ventas", compra);
+
+        addDoc("ventas", operacion);
     }
     
     // Lo que Quiero Exportar en CartContext

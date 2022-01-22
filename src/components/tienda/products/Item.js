@@ -1,7 +1,7 @@
 import React from "react";
 
 const Item = ({ producto }) =>{
-    const { title , price , image } = producto;
+    const { title , price , image, stock } = producto;
     
     return (
         <article className="item">
@@ -10,7 +10,10 @@ const Item = ({ producto }) =>{
             <div className="infoItem">
                 <h2>{title}</h2>
 
-                <p>${price}</p>  
+                <div className="itemPrice">
+                    <p className="price">${price}</p>  
+                    <p>Stock: {stock}</p>
+                </div>
             </div>
         </article>
     );

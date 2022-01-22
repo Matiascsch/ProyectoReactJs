@@ -79,7 +79,168 @@ body
   }
 
 /*************************************
-                NAVBAR
+                LOGIN
+*************************************/
+#loginSection
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    min-height: 90vh;
+}
+#loginSection > h2
+{
+    font-size: 40px;
+    text-decoration: 4px underline solid rgb(247, 34, 73);
+}
+.containerLogin
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.loginBx
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 3px solid #28C7FA;
+    background-color: #fff;
+    max-width: 500px;
+    height: 500px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.loginBx h3
+{
+    font-weight: 400;
+    font-size: 30px;
+    text-decoration: 2px underline #28C7FA;
+    text-align: center;
+}
+.loginBx > p
+{
+    font-size: 23px;
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: 2px underline #28C7FA;
+    font-weight: 400;
+}
+.loginBx .loginInputs
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+.loginBx .loginInputs input
+{
+    border: 2px solid #28C7FA;
+    padding-left: 5px;
+    width: 100%;
+    height: 40px;
+    margin: 3px;
+    font-size: 22px;
+}
+.loginBx .loginForgot 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 90%;
+}
+.loginBx .loginForgot p
+{
+    color: #0550bf;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.loginBx .btnLogin
+{
+    width: 150px;
+    height: 50px;
+    background-color: #28C7FA;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.signUpBx
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 3px solid rgb(247, 34, 73);
+    background-color: #fff;
+    max-width: 500px;
+    height: 500px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.signUpBx > h3
+{
+    font-weight: 400;
+    font-size: 30px;
+    text-decoration: 2px underline rgb(247, 34, 73);
+    text-align: center;
+}
+.signUpBx > p
+{
+    font-size: 23px;
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: 2px underline rgb(247, 34, 73);
+    font-weight: 400;
+}
+.signUpInputs
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+.signUpBx .signUpInputs input
+{
+    border: 2px solid rgb(247, 34, 73);
+    padding-left: 5px;
+    width: 100%;
+    height: 40px;
+    margin: 3px;
+    font-size: 22px;
+}
+.signUpBx .signUpForgot 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 90%;
+}
+.signUpBx .btnsignUp
+{
+    width: 150px;
+    height: 50px;
+    background-color: rgb(247, 34, 73);
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+/*************************************
+NAVBAR
 *************************************/
 header
 {
@@ -172,7 +333,8 @@ header
     font-size: 17px;
     cursor: pointer;
     border: none;
-    background-color: #28C7FA;
+    background-color: rgb(247, 34, 73);
+    color: #fff;
 }
 
 /*************************************
@@ -222,7 +384,7 @@ header
 	text-transform: uppercase;
 }
 /* CATEGORIAS */
-.homeMain 
+#homeSection 
 {
     display: flex;
     justify-content: center;
@@ -231,7 +393,7 @@ header
     min-height: 60vh;
     background-color: #fff;
 }
-.homeMain h2
+#homeSection h2
 {
 	font-size: 3.5em;
 	margin-bottom: 10px;
@@ -360,11 +522,11 @@ header
 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 5px;
     width: 250px;
-    border: 1px solid rgba(28, 28, 28, 0.316);
+    border: 1px solid rgb(247, 34, 73);
 }
 .item img
 {
@@ -379,7 +541,6 @@ header
     justify-content: center;
     width: 100%;
     align-items: center;
-    background-color: rgb(247, 34, 73);
 } 
 .item .infoItem h2 
 {
@@ -392,12 +553,24 @@ header
     white-space: nowrap;
     overflow: hidden;
 }
-.item .infoItem p
+.item .infoItem .itemPrice
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: row;
+}
+.item .infoItem .itemPrice p
+{
+    margin: 0 5px;
+    font-size: 12px;
+}
+.item .infoItem .itemPrice .price
 {
     font-size: 25px;
     color: #000;
 }
-
 /*************************************
             Detalle de Productos
 *************************************/
@@ -502,9 +675,129 @@ header
 /*************************************
                 Carrito
 *************************************/
-
-
-
+#cartContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70vh;
+    margin: 20px 0;
+}
+#cartContainer h2
+{
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 400;
+    text-decoration: 3px underline solid rgb(247, 34, 73);
+}
+.cartCardContainer
+{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: top;
+    margin-bottom: 20px;
+}
+.cartCard
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    margin: 5px;
+    border: 1px solid rgb(247, 34, 73);
+}
+.cartCard img
+{
+    max-height: 250px;
+    width: 100%;
+}
+.cartCard .cardContent
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.cartCard .cardTitle
+{
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: 2px underline solid rgb(247, 34, 73);
+    text-align: center;
+}
+.cartCard .cardInfo
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.cartCard .cardInfo .cardPrice
+{
+    font-size: 21px;
+    font-weight: 400;
+    margin-left: 6px;
+}
+.eliminarCard
+{
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    margin-right: 5px;
+}
+.cantCart
+{
+    font-size: 18px;
+}
+.confirmarCart
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.confirmarCart .totalCart
+{
+    font-size: 28px;
+}
+.btnsConfirmar
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.btnsConfirmar .btnVaciarCart
+{
+    border: none;
+    width: 200px;
+    height: 50px;
+    font-size: 21px;
+    font-weight: 400;
+    color: white;
+    margin: 5px;
+    background-color: rgb(247, 34, 73);
+    cursor: pointer;
+}
+.btnsConfirmar .btnComprarCart
+{
+    border: none;
+    width: 200px;
+    height: 50px;
+    font-size: 21px;
+    font-weight: 400;
+    color: #fff;
+    margin: 5px;
+    background-color: #28C7FA;
+    cursor: pointer;
+}
 /*************************************
                 FOOTER
 *************************************/
@@ -629,5 +922,5 @@ footer
 }
 @media (max-width: 900px){
     .ParallaxHome {display: none;}
-    
+    .containerLogin{flex-direction: column;}
 }

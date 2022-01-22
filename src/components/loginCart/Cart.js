@@ -10,32 +10,42 @@ const Cart = () => {
     }, [carritoTotalProds, updatePriceTotal])
 
     return (
-        <div className="cartContainer">
+        <section id="cartContainer">
             <h2>Tu Carrito</h2>
-            <div>
+            <p className="cantCart">Tienes {carritoTotal} de Productos en el Carrito.</p> 
+
+            <div className="cartCardContainer">
                 {carritoProds.map((i)=> {
                     const {id, producto, cantidad} = i;
-                    const {title, price, initial} = producto;
+                    const {title, price, initial, image} = producto;
                     const finalPriceProdCart = ((price/initial)*cantidad).toFixed(2)
 
                     return (
-                        <div key={id}>
-                            <h2>{title}</h2>
-                            <p>Cantidad: {cantidad}</p>
-                            <p>${finalPriceProdCart}</p>
-                            <button onClick={()=> removeToCart(i)}>Boton de Eliminar.</button>
+                        <div key={id} className="cartCard">
+                            <img src={image} alt={`Imagen de ${title}`} />
+
+                            <div className="cardContent">
+                                <h2 className="cardTitle">{title}</h2>
+                                <p>Cantidad: {cantidad}</p>
+                                <div className="cardInfo">
+                                    <p className="cardPrice">${finalPriceProdCart}</p>
+                                    <p className="eliminarCard"><ion-icon name="trash-outline" onClick={()=> removeToCart(i)}></ion-icon></p>
+                                </div>
+                            </div>
                         </div>    
                     )
                 })}
             </div>
-            <p>Tienes {carritoTotal} de Productos en el Carrito.</p> 
-            {/*corregir Numero, no me esta sumando ademas la cantidad de los productos*/}
-            
-            <button onClick={clearCart}>Vaciar Carrito.</button>
-            
-            <p>Total : $ {carritoPrecio}</p>
-            {/*corregir Numero, no me esta sumando precios finales de los productos*/}
-        </div>
+
+            <div className="confirmarCart">
+                <p className="totalCart">Total : $ {carritoPrecio}</p>
+
+                <div className="btnsConfirmar">
+                    <button className="btnVaciarCart" onClick={clearCart}>Vaciar Carrito</button>
+                    <button className="btnComprarCart" onClick={clearCart}>Comprar Carrito</button>
+                </div>
+            </div>
+        </section>
     );
 }
 

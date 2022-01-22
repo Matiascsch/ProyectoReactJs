@@ -1,8 +1,15 @@
+import SingIn from "./SignIn";
+import SingUp from "./SignUp";
+
 const UserLogin = () => {
     return(
-        <>
-        <h1>PAGINA de LOGIN</h1>
-        </>
+        <section id="loginSection">
+            <h2>Sumate a Nuestra Comunidad</h2>
+            <div className="containerLogin">
+                <SingIn />
+                <SingUp />
+            </div>
+        </section>
     )
 }
 

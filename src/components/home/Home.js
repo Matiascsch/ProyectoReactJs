@@ -5,10 +5,10 @@ import ContentHome from "./content/ContentHome";
 const Home = () =>  {
 
     return (
-        <div id="homeContainer">
+        <section>
             <ParallaxHome />
             <ContentHome />
-        </div>
+        </section>
     )
 
 }
