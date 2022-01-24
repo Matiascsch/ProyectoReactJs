@@ -38,7 +38,7 @@ const Cart = () => {
             </div>
 
             <div className="confirmarCart">
-                <p className="totalCart">Total : $ {carritoPrecio}</p>
+                <p className="totalCart">Total : $ {carritoPrecio.toFixed(2)}</p>
 
                 <div className="btnsConfirmar">
                     <button className="btnVaciarCart" onClick={clearCart}>Vaciar Carrito</button>

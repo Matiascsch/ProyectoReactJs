@@ -1,12 +1,11 @@
 import React from "react"
 import ItemListContainer from "./products/ItemListContainer";
-import AsideSearch from "./AsideSearch";
+import Search from "./filters/Search";
 
 const Tienda = () => {
     return (
         <section id="tiendaSection">
-            <h1>Pagina de TIENDA</h1>
-            <AsideSearch />
+            <Search />
             <ItemListContainer />
         </section>
     )

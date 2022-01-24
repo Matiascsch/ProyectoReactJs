@@ -82,11 +82,7 @@ const ProviderCart = ({children}) => {
     // Lo que Quiero Exportar en CartContext
     const cartValues = {producto, carritoProds, carritoTotal, carritoPrecio,  carritoTotalProds, addToCart, removeToCart, clearCart, updatePriceTotal, confirmBuy};
 
-    return (
-        <Provider value={cartValues}>
-            {children}
-        </Provider>
-    )
+    return (<Provider value={cartValues}>{children}</Provider>)
 }
 
 export default ProviderCart;
