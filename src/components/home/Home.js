@@ -5,7 +5,7 @@ import ContentHome from "./content/ContentHome";
 const Home = () =>  {
 
     return (
-        <section>
+        <section id="homeSection">
             <ParallaxHome />
             <ContentHome />
         </section>

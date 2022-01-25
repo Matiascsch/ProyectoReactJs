@@ -3,7 +3,7 @@ import Category from "./Category";
 const ContentHome = () => {
     
     return (
-        <section id="homeSection">
+        <div className="homeMain">
             <h2>Categorias</h2>
             <div className="categoryContainer">
                 <Category image="/assets/imgs/mountains.jpg" categoryTitle="North Face" categoryContent="Los Mejores Productos de la marca North Face, Edicion Invierno 2022" link=""/>
@@ -14,7 +14,7 @@ const ContentHome = () => {
 
                 <Category image="/assets/imgs/mountains.jpg" categoryTitle="Mujeres" categoryContent="Toda la Coleccion de Mujeres de Todas las Marcas" link="mujeres"/>
             </div>
-        </section>
+        </div>
     )
 }
 

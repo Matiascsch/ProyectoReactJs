@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
+
 const FilterInput =(props)=>{
     return(
-        <div className="personalInput">
-            <input type={"checkbox"} value={props.link}/>
-            <p>{props.name}</p>
-        </div>
+            <Link to={"/tienda/categorias/"+ props.link}>
+                <p>{props.name}</p>
+            </Link>
     )
 }
 

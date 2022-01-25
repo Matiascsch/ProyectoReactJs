@@ -21,7 +21,6 @@ const ProviderCart = ({children}) => {
         setProducto(articulo);
         if(exist > -1){
             toast.error(`El Producto ${title} ya esta en el Carrito!`);
-            console.log(carritoProds)
         }else{
             toast.success(`${cantidad} ${title} Agregado/s al Carrito!`);
             setCarritoProds([...carritoProds, articulo])
@@ -69,17 +68,12 @@ const ProviderCart = ({children}) => {
             const orden = addDoc(coleccion, operacion);
                   orden
                     .then(res=>{
-                        console.log(producto)
-                        console.log(res.id)
                         setCarritoProds([]);
                         toast.success(`Compra Confirmada!`)})
-                    .catch(e=>{
-                        console.log(e)
-                    })
-        }else{toast.error("No Hay Productos en el Carrito para Comprar!")}
+                    .catch(e=>console.log(e))
+        }else{toast.error("No hay Productos en el Carrito para Comprar!")}
     }
-    
-    // Lo que Quiero Exportar en CartContext
+
     const cartValues = {producto, carritoProds, carritoTotal, carritoPrecio,  carritoTotalProds, addToCart, removeToCart, clearCart, updatePriceTotal, confirmBuy};
 
     return (<Provider value={cartValues}>{children}</Provider>)

@@ -1,6 +1,6 @@
 import SingIn from "./SignIn";
 import SingUp from "./SignUp";
-import background from "../../../src/components/imgSrc/mountains.jpg"
+import background from "../../../../src/components/mountains.jpg"
 
 const UserLogin = () => {
     return(

@@ -18,6 +18,11 @@ const ItemListContainer = () =>{
         const coleccionProds =
                   (id === "hombres") ? query(coleccion, where("gender", "==", id))
                 : (id === "mujeres") ? query(coleccion, where("gender", "==", id))
+                : (id === "camperas") ? query(coleccion, where("category", "==", id))
+                : (id === "buzos") ? query(coleccion, where("category", "==", id))
+                : (id === "botas") ? query(coleccion, where("category", "==", id))
+                : (id === "north-face") ? query(coleccion, where("marca", "==", id))
+                : (id === "montagne") ? query(coleccion, where("marca", "==", id))
                 : coleccion ;
         
         const pedido = getDocs(coleccionProds)
