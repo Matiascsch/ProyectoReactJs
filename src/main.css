@@ -1007,7 +1007,7 @@ footer
     padding: 10px;
     align-items: center;
 }
-.socialFooter ul li
+.socialFooter ul li a
 {
     text-decoration: none;
     padding: 0 10px;
@@ -1015,7 +1015,7 @@ footer
     font-size: 40px;
     cursor: pointer;
 }
-.socialFooter ul li:hover
+.socialFooter ul li a:hover
 {
     color: #28C7FA;
 }
@@ -1067,6 +1067,8 @@ footer
     font-size: 18px;
     margin: 5px;
 }
+
+.contactFooter .inputContactFooter .errorInputFooter {color: white;}
 
 .copyright
 {
