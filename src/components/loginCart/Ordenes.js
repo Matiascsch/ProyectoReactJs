@@ -1,6 +1,6 @@
-import Loading from "../../tienda/products/Loading";
+import Loading from "../tienda/products/Loading";
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
-import { db } from "../../../firebase";
+import { db } from "../../firebase";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 

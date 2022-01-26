@@ -69,7 +69,7 @@ const ProviderCart = ({children}) => {
                   orden
                     .then(res=>{
                         setCarritoProds([]);
-                        toast.success(`Compra Confirmada!`)})
+                        toast.success(`Compra Confirmada! ${res.id}`)})
                     .catch(e=>console.log(e))
         }else{toast.error("No hay Productos en el Carrito para Comprar!")}
     }
